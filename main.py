@@ -21,7 +21,7 @@ def scrape_headings(url):
             # Find all the heading elements (h1, h2, h3, etc.)
             headings = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 
-            # Extract and print the text from the headings and put to csv using panda
+            # Extract and print the text from the headings and put to csv
             heading_list = [heading.text for heading in headings]
             df = pd.DataFrame(heading_list)
             df.to_csv('output.csv')
